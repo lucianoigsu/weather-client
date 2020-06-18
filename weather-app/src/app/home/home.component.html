@@ -1,0 +1,35 @@
+<div class="button-container">
+    <mat-button-toggle-group>
+        <mat-button-toggle (change)="selectCity($event)" value="none">Ubicación actual</mat-button-toggle>
+        <mat-button-toggle (change)="selectCity($event)" value="bsas">Buenos Aires</mat-button-toggle>
+        <mat-button-toggle (change)="selectCity($event)" value="londres">Londres</mat-button-toggle>
+        <mat-button-toggle (change)="selectCity($event)" value="paris">París</mat-button-toggle>
+        <mat-button-toggle (change)="selectCity($event)" value="tokio">Tokio</mat-button-toggle>
+        <mat-button-toggle (change)="selectCity($event)" value="newyork">Nueva York</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<br>
+<div class="current-container">
+    <mat-card class="current-card" *ngIf="current">
+        <mat-card-header>
+          <mat-card-title>Ubicación:</mat-card-title>
+          <mat-card-subtitle>{{currentCity}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <h3>Fecha y hora: {{date}}</h3>
+            <div class="temp-container">
+                <img src="{{'http://openweathermap.org/img/wn/'+currentWeather.icon+'@2x.png'}}" alt="">
+                <span class="temp">{{current.temp}}º</span>
+            </div>
+            <br>
+            <div>Descripción: {{currentWeather.description|uppercase}}</div>
+            <div>Humedad: {{current.humidity}}%</div>
+        </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<br>
+<div class="forecast-container" *ngIf="forecast && timezone">
+    <app-forecast-card *ngFor="let daily of forecast" [daily]="daily" [timezone]="timezone"></app-forecast-card>
+</div>

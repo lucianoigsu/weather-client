@@ -1,0 +1,13 @@
+<mat-card class="current-card">
+    <mat-card-header>
+      <mat-card-title>Día: </mat-card-title>
+      <mat-card-subtitle>{{day}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <img src="{{'http://openweathermap.org/img/wn/'+weather.icon+'@2x.png'}}" alt="">
+        <div class="temp-container">
+        </div>
+        <h5>Min: {{min}}º / Max: {{max}}º</h5>
+        <br>
+    </mat-card-content>
+</mat-card>

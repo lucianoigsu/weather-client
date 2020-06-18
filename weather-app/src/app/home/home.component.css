@@ -1,0 +1,57 @@
+.button-container{
+    width: 100%;
+    text-align: center;
+}
+
+mat-button-toggle-group{
+    width: 90%;
+    margin: auto;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+mat-button-toggle{
+    width: 20%;
+    border-left: none !important;
+}
+
+mat-card-content{
+    text-align: center;
+}
+
+.current-container{
+    width: 90%;
+    margin: auto;
+}
+
+.temp-container{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.temp{
+    font-size: 5em;
+}
+
+.forecast-container{
+    display: grid;
+    overflow-x: auto;
+    padding: 1%;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: repeat(8, 12.5%)
+}
+
+@media (max-width: 500px) {
+    mat-button-toggle-group{
+        display: grid;
+    }
+    
+    mat-button-toggle{
+        width: 100%;
+    }
+
+    .forecast-container{
+        grid-template-columns: repeat(8, 40%)
+    }
+}
